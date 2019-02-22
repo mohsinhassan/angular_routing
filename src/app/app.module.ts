@@ -4,6 +4,7 @@ import { NgModule } from '@angular/core';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { RouterModule , Routes} from '@angular/router';
+import {FormsModule } from '@angular/forms';
 import { ListEmployeeComponent } from './employees/list-employee/list-employee.component';
 import { CreateEmployeeComponent } from './employees/create-employee.component';
 
@@ -21,6 +22,7 @@ const appRoutes : Routes = [
   ],
   imports: [
     BrowserModule,
+    FormsModule,
     RouterModule.forRoot(appRoutes)
   ],
   providers: [],
