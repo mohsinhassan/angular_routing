@@ -1,4 +1,4 @@
-import { Component, OnInit , Input , SimpleChanges} from '@angular/core';
+import { Component, OnInit , Input , OnChanges, SimpleChanges} from '@angular/core';
 import { Employee } from '../models/employee.model';
 
 @Component({
@@ -6,12 +6,14 @@ import { Employee } from '../models/employee.model';
   templateUrl: './display-employee.component.html',
   styleUrls: ['./display-employee.component.scss']
 })
-export class DisplayEmployeeComponent implements OnInit  {
+export class DisplayEmployeeComponent implements OnInit , OnChanges  {
   private _employee : Employee;
+  @Input() employeeId : number;
+
   @Input()
   set employee(val : Employee){
-    console.log("previous " + (this._employee ? this._employee.title : "null"));
-    console.log("current " + val.title);
+    // console.log("previous " + (this._employee ? this._employee.title : "null"));
+    // console.log("current " + val.title);
     this._employee = val;
   }
   get employee() : Employee
@@ -22,7 +24,17 @@ export class DisplayEmployeeComponent implements OnInit  {
   constructor() { }
 
   ngOnInit() {
-    console.log("here32");
+    //console.log("here32");
+  }
+  ngOnChanges( changes : SimpleChanges){
+    for ( const propName of Object.keys(changes)) {
+      const change = changes[propName];
+      const from = JSON.stringify(change.previousValue);
+      const to = JSON.stringify(change.currentValue);
+      
+      console.log(propName + "change from " + from + " to " + to);
+    }
+
   }
 
   // ngOnChanges( changes : SimpleChanges){
