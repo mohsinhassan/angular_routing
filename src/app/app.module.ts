@@ -10,6 +10,7 @@ import {FormsModule } from '@angular/forms';
 import { ListEmployeeComponent } from './employees/list-employee/list-employee.component';
 import { CreateEmployeeComponent } from './employees/create-employee.component';
 import { EmployeeService } from './employees/services/employee.service';
+import { DisplayEmployeeComponent } from './employees/display-employee.component';
 
 
 const appRoutes : Routes = [
@@ -21,7 +22,8 @@ const appRoutes : Routes = [
   declarations: [
     AppComponent,
     ListEmployeeComponent,
-    CreateEmployeeComponent
+    CreateEmployeeComponent,
+    DisplayEmployeeComponent
   ],
   imports: [
     BrowserModule,
