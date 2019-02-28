@@ -1,6 +1,6 @@
 <div class="container">
 <div class="panel panel-primary" *ngFor="let employee of employees">
-    <button (click)="logMessage(employee.id)">Click Me</button>
+    <button (click)="logMessage(employeeComponent.employee.id)">Click Me</button>
   <app-display-employee [employee]="employee" #employeeComponent ></app-display-employee>
 
         </div>
