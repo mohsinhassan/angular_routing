@@ -16,10 +16,7 @@ export class DisplayEmployeeComponent implements OnInit {
     console.log("here32");
   }
 
-  logMessage(val)
-  {
-    console.log(val);
-  }
+  
 
   // ngOnChanges( changes : SimpleChanges){
   //   for ( const propName of Object.keys(changes)) {

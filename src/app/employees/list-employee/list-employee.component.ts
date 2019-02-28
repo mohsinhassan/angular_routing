@@ -38,10 +38,9 @@ export class ListEmployeeComponent implements OnInit  {
     }
 
     logMessage(val)
-  {
-    console.log(val);
-  }
-
+    {
+      console.log(val);
+    }
     // nextEmployee() : void{
     //   //console.log(this.arrayIndex);
     //   if(this.arrayIndex <= 1)
