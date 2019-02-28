@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Employee } from 'src/app/models/employee.model';
+import { Router } from '@angular/router';
 //import {HttpClient , HttpErrorResponse} from '@angular/common/http';
 import {Error} from "tslint/lib/error";
 
@@ -17,19 +18,16 @@ import { EmployeeService } from '../services/employee.service';
 })
 export class ListEmployeeComponent implements OnInit  {
     private employees : Employee[]; 
-    employeeToDisplay : Employee;
-    private arrayIndex = 1;
+    ;
     // = Employee;
 
-    constructor(private _employeeService : EmployeeService ) { //, http: HttpClient
-
-      
+    constructor(private _employeeService : EmployeeService , private _router : Router) { //, http: HttpClient
+            
     }
 
     ngOnInit() {
 
       this.employees = this._employeeService.getEmployee();
-      this.employeeToDisplay = this.employees[0];
       // this._employeeService.getEmployee();
 
       // console.log("this.employees");
@@ -41,6 +39,13 @@ export class ListEmployeeComponent implements OnInit  {
     {
       console.log(val);
     }
+
+    employeeDetails(employeeId){
+
+      this._router.navigate(['/employees', employeeId]);
+
+    }
+
     // nextEmployee() : void{
     //   //console.log(this.arrayIndex);
     //   if(this.arrayIndex <= 1)

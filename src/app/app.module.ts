@@ -11,11 +11,13 @@ import { ListEmployeeComponent } from './employees/list-employee/list-employee.c
 import { CreateEmployeeComponent } from './employees/create-employee.component';
 import { EmployeeService } from './employees/services/employee.service';
 import { DisplayEmployeeComponent } from './employees/display-employee.component';
+import { EmployeeDetailsComponent } from './employees/employee-details.component';
 
 
 const appRoutes : Routes = [
   {  path: "list" , component : ListEmployeeComponent},
   {  path: "create" , component : CreateEmployeeComponent},
+  {  path: "employees/:id" , component : EmployeeDetailsComponent},
   {  path: "" , redirectTo : '/list' , pathMatch: 'full' }
   ];
 @NgModule({
@@ -23,7 +25,8 @@ const appRoutes : Routes = [
     AppComponent,
     ListEmployeeComponent,
     CreateEmployeeComponent,
-    DisplayEmployeeComponent
+    DisplayEmployeeComponent,
+    EmployeeDetailsComponent
   ],
   imports: [
     BrowserModule,
