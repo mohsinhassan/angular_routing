@@ -25,8 +25,12 @@ export class EmployeeService {
    } 
 ]
 
-getEmployee() : Employee[]{
+getEmployees() : Employee[]{
   return this.listEmploye;
+}
+
+getEmployee(id : Number) : Employee {
+  return this.listEmploye.find(e=> e.id === id);
 }
 
   // getEmployee() : Employee[] {
