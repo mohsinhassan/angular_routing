@@ -1,4 +1,4 @@
-import { Component, OnInit , Input , OnChanges, SimpleChanges} from '@angular/core';
+import { Component, OnInit , Input } from '@angular/core';
 import { Employee } from '../models/employee.model';
 
 @Component({
@@ -6,36 +6,31 @@ import { Employee } from '../models/employee.model';
   templateUrl: './display-employee.component.html',
   styleUrls: ['./display-employee.component.scss']
 })
-export class DisplayEmployeeComponent implements OnInit , OnChanges  {
-  private _employee : Employee;
-  @Input() employeeId : number;
-
-  @Input()
-  set employee(val : Employee){
-    // console.log("previous " + (this._employee ? this._employee.title : "null"));
-    // console.log("current " + val.title);
-    this._employee = val;
-  }
-  get employee() : Employee
-  {
-    return this._employee;
-  }
+export class DisplayEmployeeComponent implements OnInit {
+   
+  @Input() employee : Employee;
   
   constructor() { }
 
   ngOnInit() {
-    //console.log("here32");
+    console.log("here32");
   }
-  ngOnChanges( changes : SimpleChanges){
-    for ( const propName of Object.keys(changes)) {
-      const change = changes[propName];
-      const from = JSON.stringify(change.previousValue);
-      const to = JSON.stringify(change.currentValue);
-      
-      console.log(propName + "change from " + from + " to " + to);
-    }
 
+  logMessage(val)
+  {
+    console.log(val);
   }
+
+  // ngOnChanges( changes : SimpleChanges){
+  //   for ( const propName of Object.keys(changes)) {
+  //     const change = changes[propName];
+  //     const from = JSON.stringify(change.previousValue);
+  //     const to = JSON.stringify(change.currentValue);
+      
+  //     console.log(propName + "change from " + from + " to " + to);
+  //   }
+
+  // }
 
   // ngOnChanges( changes : SimpleChanges){
   //   const previousEmployee = <Employee>changes.employee.previousValue;

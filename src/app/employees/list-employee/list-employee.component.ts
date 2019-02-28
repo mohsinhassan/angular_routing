@@ -37,18 +37,23 @@ export class ListEmployeeComponent implements OnInit  {
       
     }
 
-    nextEmployee() : void{
-      //console.log(this.arrayIndex);
-      if(this.arrayIndex <= 1)
-      {
-        this.employeeToDisplay = this.employees[this.arrayIndex];
-        this.arrayIndex ++;
-      }
-      else { 
-        this.employeeToDisplay = this.employees[0];
-        this.arrayIndex = 1;
-      } 
-    }
+    logMessage(val)
+  {
+    console.log(val);
+  }
+
+    // nextEmployee() : void{
+    //   //console.log(this.arrayIndex);
+    //   if(this.arrayIndex <= 1)
+    //   {
+    //     this.employeeToDisplay = this.employees[this.arrayIndex];
+    //     this.arrayIndex ++;
+    //   }
+    //   else { 
+    //     this.employeeToDisplay = this.employees[0];
+    //     this.arrayIndex = 1;
+    //   } 
+    // }
 
    
 }
