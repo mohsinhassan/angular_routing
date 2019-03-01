@@ -33,6 +33,11 @@ getEmployee(id : Number) : Employee {
   return this.listEmploye.find(e=> e.id === id);
 }
 
+saveEmployee(employee: Employee)
+{
+  this.listEmploye.push(employee);
+}
+
   // getEmployee() : Employee[] {
 
   //   this.http.get<Employee>('https://jsonplaceholder.typicode.com/posts').subscribe(
